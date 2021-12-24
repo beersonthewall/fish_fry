@@ -1,0 +1,39 @@
+py -m http.server
+cd C:\Users\mike\.virtualenvs\fish-fry-t_H5LzCc
+
+$ source ./.virtualenvs/fish-fry-t_H%lzcc/scripts/activate
+
+
+
+
+source ./.virtualenvs/fish-fry-t_H5lzcc/scripts/activate
+cd fish-fry
+FLASK_APP=fish_fry flask run
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+				{% for f in fish %}
+					<label for="{{ f['name']}}">{{ f['name'] }}</label>
+					<input name="{{ f['name'] }}" id="{{ f['name'] }}" type="number" step="" class="counter" value="4"></input>
+				{% endfor %}
+				-->
+				<!--
+					<div class="number-input">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" ></button>
+					<input class="quantity" min="0" name="quantity" value="1" type="number">
+					<button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus"></button>
+					</div>
+					-->

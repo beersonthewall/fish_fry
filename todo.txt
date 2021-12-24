@@ -1,0 +1,13 @@
+TODO:
+- Orders page javascript to push meals to lhs of orders page in the browser
+- Orders page form to submit meals and stuff to backend
+- orders page form to create a meal
+- orders page submit redirects to a 'receipt' page which has a print button and easy redirect to new order page
+- Programatically add menu items
+- Proper web tokens / authentication
+- Date to event table to support sane ordering in events page
+- First event added doesn't display in events/ wtf?
+
+DONE:
+- Nothing!
+- Login doesn't redirect to events/homepage

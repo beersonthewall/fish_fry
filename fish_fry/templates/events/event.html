@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %}Events{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<section>
+		<button class="add-event"><a href="{{ url_for('event.create') }}">Add Event</a></button>
+	</section>
+
+	{% for event in events %}
+		<section class="event">
+			<header>
+				<h3>{{ event['name'] }}</h3>
+			</header>
+			<button class="select"><a href="{{ url_for('order.order_index') }}">Take Orders</a></button>
+		</section>
+	{% endfor %}
+{% endblock %}

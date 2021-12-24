@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block header %}
+	<h1>{% block title %}Create Event{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+	<form method="post">
+		<label for="event_name">Event Name</label>
+		<input name="event_name" id="event_name" value="{{ request.form['event_name']}}" required />
+		
+		<input type="submit" value="Create" />
+	</form>
+{% endblock %}
