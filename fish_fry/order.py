@@ -14,14 +14,22 @@ def order_index():
         "SELECT * FROM fish;",
         ()
     )
-     
+
     sides = db.execute(
         "SELECT * FROM side;",
         ()
     )
-    
+
+    # IT'S INSANE I NEED TO DO THIS....
+    # But who cares, not like this will ever be more than 10 items in this table.
+    sides_dos = db.execute(
+        "SELECT * FROM side;",
+        ()
+    )
+
     extra = db.execute(
         "SELECT * FROM extra;",
         ()
     )
-    return render_template('order/order.html', fish=fish, sides=sides, extra=extra)
+
+    return render_template('order/order.html', fish=fish, sides=sides, sides_dos=sides_dos, extra=extra)

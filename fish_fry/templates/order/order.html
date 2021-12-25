@@ -1,49 +1,74 @@
 {% extends 'base.html' %}
 
 {% block head %}
-	<link rel="stylesheet" href="{{ url_for('static', filename='orders.css') }}">
-	
-	
+<link rel="stylesheet" href="{{ url_for('static', filename='orders.css') }}">
 {% endblock %}
 
-
-
 {% block header %}
-	<h1>{% block title %}Orders{% endblock %}</h1>
+<h1>{% block title %}Orders{% endblock %}</h1>
 {% endblock %}
 
 
 	  	
 
 {% block content %}
+<div class="orders-container">
 
+  <div class="menu">
+    <h3 class="orders-subtitle">Current Order</h3>
+	<form method="post">
+	  <input type="submit" value="Order Up">
+	</form>
+  </div>
 
+  <div class="menu">
+    <h3 class="orders-subtitle">Menu</h3>
+    <section class="menu-items-container">
+      <div class="menu-item-col">
+        <h4> Fish</h4>
+        {% for f in fish %}
+        <button type="button" class="menu-button" onClick="buttonToggle(this)">{{ f['name'] }}</button>
+        {% endfor %}
+      </div>
 
-	<div class="order_menu">
-		<div class="menu">
-			<h3>Meals</h3>
-			<form method="post">
-				<input type="submit" value="Order Up">
-			</form>
-		</div>
+      <div class="menu-item-col">
+        <h4>Side 1</h4>
+        {% for s in sides %}
+        <button type="button" class="menu-button" onClick="buttonToggle(this)">{{ s['name'] }}</button>
+        {% endfor %}
+      </div>
 
-		<section >
+      <div class="menu-item-col">
+        <h4>Side 2</h4>
+        {% for s in sides_dos %}
+        <button type="button" class="menu-button" onClick="buttonToggle(this)">{{ s.name }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="menu-item-col">
+        <h4>Extras</h4>
+        {% for e in extra %}
+        <button type="button" class="menu-button" onClick="buttonToggle(this)">{{ e['name'] }}</button>
+        {% endfor %}
+      </div>
+    </section>
+  </div>
+
+</div>
+ <!--
+		<section>
 			<div class="menu">
 				<h3>Items</h3>
 				<form onSubmit="return addMeal();">
-					<div class="roww"></div>
 					<h2>Fish</h2>
+
 					{% for f in fish %}
-					
 					<input name="fish" id="{{ f['name'] }}" type="radio" value="0"></input>
 					<label for="{{ f['name']}}">{{ f['name'] }}</label>	
 					{% endfor %}
 
-					<h2>Fish</h2>
-					
 			        </div>
-					<!--
-					
+				
 					<h2>Sides</h2>
 						{% for s in sides %}
 							<div class="input-group">
@@ -67,7 +92,6 @@
 							<span style="width:1vw;display:inline-block; margin:auto"></span>
 						</div>
 						{% endfor %}
-					-->
 					</section>
 
 					<div class="totals">
@@ -86,7 +110,8 @@
 				</form>
 			</div>
 		</section>
-	</div>
+</div>
+-->
 {% endblock %}
 
 {% block footer %}
